@@ -78,7 +78,12 @@ void Creeare_Monitor(Monitor *rez){
     cout<<" 7680 x 4320 - 5"<<endl;
     cout<<" Introduce-ti numarul corespunzator rezolutiei dumneavoastra : ";
     cin>>rez_mon;
+if (rez_mon<1 || rez_mon>5)
+{
+    cout<<"Alegere incorecta !";
+    cin>>rez_mon;
 
+}
     switch (rez_mon) {
         case 1:
             rez->Aspect_rezolutie(720,1280,"720p");
