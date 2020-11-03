@@ -130,7 +130,7 @@ class MMORPG : public Joc{
 };
 //Functie Creeare PC
 
-void Creeare_Pc (Calculator *PC){
+void Creare_Pc (Calculator *PC){
 
 
 
@@ -140,7 +140,7 @@ void Creeare_Pc (Calculator *PC){
 
 //Functie creeare montior
 
-void Creeare_Monitor(Monitor *rez){
+void Creare_Monitor(Monitor *rez){
     int rez_mon;
     cout<<" Care este rezolutia monitorului dumneavoastra?"<<endl;
     cout<<" 1280 x 720  - 1"<<endl;
@@ -198,7 +198,7 @@ void Creeare_Monitor(Monitor *rez){
 
 int main() {
     Monitor *rez=new Monitor();
-    Creeare_Monitor(rez);
+    Creare_Monitor(rez);
     cout<<*rez;
     cout<<"\n"<<"Doresti sa distrugi acest monitor?  Da/Nu"<<"\n";
     string Raspuns;
