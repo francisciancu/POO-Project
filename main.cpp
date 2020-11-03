@@ -128,7 +128,7 @@ class MMORPG : public Joc{
     string Dificultate;
 
 };
-//Functie Creeare PC
+//Functie Creare PC
 
 void Creare_Pc (Calculator *PC){
 
@@ -138,7 +138,7 @@ void Creare_Pc (Calculator *PC){
 }
 
 
-//Functie creeare montior
+//Functie Creare Montior
 
 void Creare_Monitor(Monitor *rez){
     int rez_mon;
