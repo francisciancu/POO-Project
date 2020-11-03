@@ -54,12 +54,12 @@ public:
         Nr_Pixeli_Latime=obj.Nr_Pixeli_Latime;
         Rezolutie=obj.Rezolutie;
         return *this;
-}
+    }
     void Aspect_rezolutie(int Nr_Pixeli_Inaltime,int Nr_Pixeli_Latime,string Rezolutie){
         this -> Nr_Pixeli_Inaltime = Nr_Pixeli_Inaltime;
         this -> Nr_Pixeli_Latime = Nr_Pixeli_Latime;
         this -> Rezolutie = Rezolutie;
-}
+    }
     //Destructor
     ~Monitor(){
         cout<<"Monitor Goes Brrr( dieded :o )";
@@ -92,8 +92,8 @@ public:
         }
         else
         {cout<<"Raspuns Invalid !"<<"\n"<<"Introduce-ti un raspuns corect. Da/Nu"<<"\n";
-        cin>>Raspuns;
-        this->Distrugere_Monitor(Raspuns,Validare_Raspuns);}
+            cin>>Raspuns;
+            this->Distrugere_Monitor(Raspuns,Validare_Raspuns);}
 
 
     }
@@ -114,7 +114,7 @@ public:
     int rezolutieH;
 };
 class MMORPG : public Joc{
-    public:
+public:
     string Tip_Joc="MMORPG";
     MMORPG(){
         this->Multiplayer= true;
@@ -141,7 +141,7 @@ void Creare_Pc (Calculator *PC){
 //Functie Creare Montior
 
 void Creare_Monitor(Monitor *rez){
-    int rez_mon;
+
     cout<<" Care este rezolutia monitorului dumneavoastra?"<<endl;
     cout<<" 1280 x 720  - 1"<<endl;
     cout<<" 1920 x 1080 - 2"<<endl;
@@ -150,39 +150,33 @@ void Creare_Monitor(Monitor *rez){
     cout<<" 7680 x 4320 - 5"<<endl;
     cout<<" Introduce-ti numarul corespunzator rezolutiei dumneavoastra : ";
 
+    string rez_mon;
+    getline(cin, rez_mon);
+    while(rez_mon.size() > 1 || (rez_mon[0] < '1' || rez_mon[0] > '5')) {
+        cout << "Alegere incorecta ! Introduce-ti un raspuns corect." << "\n";
+        getline(cin, rez_mon);
+    }
+    char a = rez_mon[0];
 
-    do{ cin>>rez_mon;
-    switch (rez_mon) {
-        case 1:
+    switch (a) {
+        case '1':
             rez->Aspect_rezolutie(720,1280,"720p");
             break;
-        case 2:
+        case '2':
             rez->Aspect_rezolutie(1080,1920,"1080p");
             break;
-        case 3:
+        case '3':
             rez->Aspect_rezolutie(1440,2560,"1440p");
             break;
-        case 4:
+        case '4':
             rez->Aspect_rezolutie(2160,3840,"2160p/4K");
             break;
-        case 5:
+        case '5':
             rez->Aspect_rezolutie(4320,7680,"4320p/8K");
             break;
         default:
-        {cout<<"Alegere incorecta ! Introduce-ti un raspuns corect."<<"\n";
-            cout<<" Care este rezolutia monitorului dumneavoastra?"<<endl;
-            cout<<" 1280 x 720  - 1"<<endl;
-            cout<<" 1920 x 1080 - 2"<<endl;
-            cout<<" 2560 x 1440 - 3"<<endl;
-            cout<<" 3840 x 2160 - 4"<<endl;
-            cout<<" 7680 x 4320 - 5"<<endl;
-            cout<<" Introduce-ti numarul corespunzator rezolutiei dumneavoastra : ";
-
-        }
+            break;
     }
-    }while( rez_mon<1 || rez_mon>5 );
-
-
 }
 
 //Functie Creeare Joc
@@ -205,14 +199,6 @@ int main() {
     cin>>Raspuns;
     int Validare_Raspuns=0;
     rez->Distrugere_Monitor(Raspuns,Validare_Raspuns);
-
-
-
-
-
-
-
-
 
 
     return 0;
