@@ -79,6 +79,7 @@ public:
         for_each(Raspuns.begin(), Raspuns.end(), [](char & c){
             c =tolower(c);
         });
+        Raspuns.erase(remove(Raspuns.begin(), Raspuns.end(), ' '), Raspuns.end());
         if(Raspuns == "da")
         {
             delete this; // test destructor
@@ -137,7 +138,6 @@ void Creare_Pc (Calculator *PC){
 
 }
 
-
 //Functie Creare Montior
 
 void Creare_Monitor(Monitor *rez){
@@ -152,9 +152,11 @@ void Creare_Monitor(Monitor *rez){
 
     string rez_mon;
     getline(cin, rez_mon);
+    rez_mon.erase(remove(rez_mon.begin(), rez_mon.end(), ' '), rez_mon.end());
     while(rez_mon.size() > 1 || (rez_mon[0] < '1' || rez_mon[0] > '5')) {
         cout << "Alegere incorecta ! Introduce-ti un raspuns corect." << "\n";
         getline(cin, rez_mon);
+        rez_mon.erase(remove(rez_mon.begin(), rez_mon.end(), ' '), rez_mon.end());
     }
     char a = rez_mon[0];
 
@@ -196,7 +198,7 @@ int main() {
     cout<<*rez;
     cout<<"\n"<<"Doresti sa distrugi acest monitor?  Da/Nu"<<"\n";
     string Raspuns;
-    cin>>Raspuns;
+    getline(cin, Raspuns);
     int Validare_Raspuns=0;
     rez->Distrugere_Monitor(Raspuns,Validare_Raspuns);
 
