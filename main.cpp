@@ -254,16 +254,45 @@ void Creare_Monitor(Monitor *rez){
 
 
 int main() {
-    Monitor *rez=new Monitor();
-    Creare_Monitor(rez);
-    cout<<*rez;
+    cout<<"Doriti sa creati un nou monitor ? "<<'\n';
+    cout<<"0-NU"<<'\n';
+    cout<<"1-DA"<<'\n';
+    string ras1;
+    getline(cin,ras1);
+   ras1.erase(remove(ras1.begin(), ras1.end(), ' '), ras1.end());
+    int ans1=stoi(ras1);
+    if(ans1 = 1)
+    {
+        Monitor *rez=new Monitor();
+        Creare_Monitor(rez);
+        cout<<*rez;
+    }
+    else {
+       return 0;
+    }
+
     //cout<<"\n"<<"Doresti sa distrugi acest monitor?  Da/Nu"<<"\n";
     //string Raspuns;
     //getline(cin, Raspuns);
     //int Validare_Raspuns=0;
    //rez->Distrugere_Monitor(Raspuns,Validare_Raspuns);
-   Calculator *PC=new Calculator();
-   Creare_Pc(PC);
+
+    cout<<"Doriti sa creati un nou calculator ? "<<'\n';
+    cout<<"0-NU"<<'\n';
+    cout<<"1-DA"<<'\n';
+    string ras2;
+    getline(cin,ras2);
+    ras2.erase(remove(ras2.begin(), ras2.end(), ' '), ras2.end());
+    int ans2=stoi(ras2);
+    if(ans2==1)
+    {
+        Calculator *PC=new Calculator();
+        Creare_Pc(PC);
+    }
+    else {
+        return 0;
+    }
+
 
 
     return 0;
