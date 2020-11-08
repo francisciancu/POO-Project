@@ -113,14 +113,13 @@ protected:
     bool Multiplayer;
     int rezolutieW;
     int rezolutieH;
+    string Tip_Joc
 };
 class MMORPG : public Joc{
 protected:
-    string Tip_Joc="MMORPG";
     MMORPG(){
         this->Multiplayer= true;
-
-
+        this->Tip_Joc="MMORPG";
     }
     int Max_players;
     int Ore_Gameplay;
@@ -220,7 +219,6 @@ void Creare_Monitor(Monitor *rez){
         rez_mon.erase(remove(rez_mon.begin(), rez_mon.end(), ' '), rez_mon.end());
     }
     char a = rez_mon[0];
-//stoi
     switch (a) {
         case '1':
             rez->Aspect_rezolutie(720,1280,"720p");
