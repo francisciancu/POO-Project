@@ -113,7 +113,7 @@ protected:
     bool Multiplayer;
     int rezolutieW;
     int rezolutieH;
-    string Tip_Joc
+    string Tip_Joc;
 };
 class MMORPG : public Joc{
 protected:
@@ -240,7 +240,7 @@ void Creare_Monitor(Monitor *rez){
     }
 }
 
-//Functie Creeare Joc
+//Functie Creeare Joc - Inca ma gandesc cum sa implementez asta si sa vad daca sunt sigur de ruta pe care vreau sa merg ( Legat de clasa de jocuri )
 /*void Creeare_Joc(){
 
 
