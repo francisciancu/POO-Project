@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <locale>
 #include <algorithm>
 
 
@@ -114,8 +113,17 @@ protected:
     int rezolutieW;
     int rezolutieH;
     string Tip_Joc;
+/*public:
+    //contructor- initializare
+    Joc(string Nume="0",int Pret=0,int RAM_Minim=0,int F_Provesor_Minim=0,int VRAM_Minim=0,bool Multiplayer= false ,int rezolutieW=0 ,int rezolutieH=0,string Tip_Joc="0"){
+        this->
+
+
+
+    }*/
+
 };
-class MMORPG : public Joc{
+class MMORPG : protected Joc{
 protected:
     MMORPG(){
         this->Multiplayer= true;
@@ -128,6 +136,36 @@ protected:
     string Dificultate;
 
 };
+
+class Shooter : protected Joc{
+protected:
+    Shooter(){
+        this->Multiplayer= true;
+        this->Tip_Joc="Shooter";
+    }
+    int Max_players;
+    int Nr_Servers;
+    int Nr_Harti;
+    string Dificultate;
+
+};
+
+class SingleplayerGame : protected Joc{
+protected:
+    SingleplayerGame(){
+        this->Multiplayer=false;
+        this->Tip_Joc="Singleplayer";
+    }
+    int Ore_Gameplay;
+    int Nr_Dificultati;
+    vector<string>Dificultati;
+    string Tip_Joc;
+};
+
+
+
+
+
 //Functie Creare PC
 
 void Creare_Pc (Calculator *PC){
@@ -197,7 +235,7 @@ int Frecventa_Procesor=stoi(Frecventa_Procesor_Introdusa);
 
 
 
-///std make uique
+
 //Functie Creare Montior
 
 void Creare_Monitor(Monitor *rez){
@@ -240,32 +278,27 @@ void Creare_Monitor(Monitor *rez){
     }
 }
 
-//Functie Creeare Joc - Inca ma gandesc cum sa implementez asta si sa vad daca sunt sigur de ruta pe care vreau sa merg ( Legat de clasa de jocuri )
-/*void Creeare_Joc(){
-
-
-
-
-}*/
-
-
-
-
 int main() {
     cout<<"Doriti sa creati un nou monitor ? "<<'\n';
     cout<<"0-NU"<<'\n';
     cout<<"1-DA"<<'\n';
     string ras1;
     getline(cin,ras1);
-   ras1.erase(remove(ras1.begin(), ras1.end(), ' '), ras1.end());
+    ras1.erase(remove(ras1.begin(), ras1.end(), ' '), ras1.end());
+    while(ras1.size() > 1 || (ras1[0] < '0' || ras1[0] > '1')) {
+        cout << "Alegere incorecta ! Introduce-ti un raspuns corect." << "\n";
+        getline(cin, ras1);
+        ras1.erase(remove(ras1.begin(), ras1.end(), ' '), ras1.end());
+    }
     int ans1=stoi(ras1);
-    if(ans1 = 1)
+    if(ans1 == 1)
     {
         Monitor *rez=new Monitor();
         Creare_Monitor(rez);
         cout<<*rez;
     }
     else {
+        cout<<"O zi buna si multumim pentru folosirea aplicatiei noastre! :) ";
        return 0;
     }
 
