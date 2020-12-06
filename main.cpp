@@ -34,6 +34,71 @@ public:
         cout << "This PC( " << Nume_PC << " ) Burned Down( to much power :O )";
     }
 
+    void Creare_Pc() {
+        cout << " Introduce-ti numarul de GB de RAM dorit ( Numar Maxim 64 ) : " << '\n';
+        string Nr_RAM_Introdus;
+        getline(cin, Nr_RAM_Introdus);
+        int Nr_RAM = stoi(Nr_RAM_Introdus);
+        int validare1 = 1;
+        while (validare1 == 1) {
+            if (Nr_RAM > 64 || Nr_RAM < 0) {
+                cout << "Alegere incorecta ! Introduce-ti un raspuns corect." << "\n";
+                getline(cin, Nr_RAM_Introdus);
+                Nr_RAM = stoi(Nr_RAM_Introdus);
+                validare1 = 1;
+            } else {
+                validare1 = 0;
+            }
+        }
+        this->Nr_RAM = Nr_RAM;
+
+        string Nr_VRAM_Introdus;
+        cout << "Introduce-ti numarul de Gb de VRAM dorit ( Numar Maxim 16 ) : " << "\n";
+        getline(cin, Nr_VRAM_Introdus);
+        int Nr_VRAM = stoi(Nr_VRAM_Introdus);
+        int validare2 = 1;
+        while (validare2 == 1) {
+            if (Nr_VRAM > 16 || Nr_VRAM < 0) {
+                cout << "Alegere incorecta ! Introduce-ti un raspuns corect." << "\n";
+                getline(cin, Nr_VRAM_Introdus);
+                Nr_VRAM = stoi(Nr_VRAM_Introdus);
+                validare2 = 1;
+            } else
+                validare2 = 0;
+        }
+        this->Nr_VRAM = Nr_VRAM;
+
+        string Frecventa_Procesor_Introdusa;
+        cout << "Introduce-ti numarul de GHz ai procesorului ( Numar Maxim 6 ) : " << "\n";
+        getline(cin, Frecventa_Procesor_Introdusa);
+        int Frecventa_Procesor = stoi(Frecventa_Procesor_Introdusa);
+        int validare3 = 1;
+        while (validare3 == 1) {
+            if (Frecventa_Procesor > 6 || Frecventa_Procesor < 0) {
+                cout << "Alegere incorecta ! Introduce-ti un raspuns corect." << "\n";
+                getline(cin, Frecventa_Procesor_Introdusa);
+                Frecventa_Procesor = stoi(Frecventa_Procesor_Introdusa);
+                validare3 = 1;
+            } else
+                validare3 = 0;
+        }
+        this->Frecventa_Procesor = Frecventa_Procesor;
+
+        string Nume_PC;
+        cout << " Introduce-ti numele calculatorului " << '\n';
+        getline(cin, Nume_PC);
+        this->Nume_PC = Nume_PC;
+    }
+
+    friend ostream& operator<<(ostream& os, const Calculator& obj){
+        os << "Numele calculatorului este : " << obj.Nume_PC << '\n';
+        os << "Numar Gb RAM : " << obj.Nr_RAM << '\n';
+        os << "Numar Gb VRAM : " << obj.Nr_VRAM << '\n';
+        os << "Numar de Ghz ai procesorului : " << obj.Frecventa_Procesor << '\n';
+
+        return os;
+    }
+
 };
 
 
@@ -177,66 +242,7 @@ protected:
 
 //Functie Creare PC
 
-void Creare_Pc(Calculator *PC) {
-    cout << " Introduce-ti numarul de GB de RAM dorit ( Numar Maxim 64 ) : " << '\n';
-    string Nr_RAM_Introdus;
-    getline(cin, Nr_RAM_Introdus);
-    int Nr_RAM = stoi(Nr_RAM_Introdus);
-    int validare1 = 1;
-    while (validare1 == 1) {
-        if (Nr_RAM > 64 || Nr_RAM < 0) {
-            cout << "Alegere incorecta ! Introduce-ti un raspuns corect." << "\n";
-            getline(cin, Nr_RAM_Introdus);
-            Nr_RAM = stoi(Nr_RAM_Introdus);
-            validare1 = 1;
-        } else {
-            validare1 = 0;
-        }
-    }
 
-    string Nr_VRAM_Introdus;
-    cout << "Introduce-ti numarul de Gb de VRAM dorit ( Numar Maxim 16 ) : " << "\n";
-    getline(cin, Nr_VRAM_Introdus);
-    int Nr_VRAM = stoi(Nr_VRAM_Introdus);
-    int validare2 = 1;
-    while (validare2 == 1) {
-        if (Nr_VRAM > 16 || Nr_VRAM < 0) {
-            cout << "Alegere incorecta ! Introduce-ti un raspuns corect." << "\n";
-            getline(cin, Nr_VRAM_Introdus);
-            Nr_VRAM = stoi(Nr_VRAM_Introdus);
-            validare2 = 1;
-        } else
-            validare2 = 0;
-    }
-
-    string Frecventa_Procesor_Introdusa;
-    cout << "Introduce-ti numarul de GHz ai procesorului ( Numar Maxim 6 ) : " << "\n";
-    getline(cin, Frecventa_Procesor_Introdusa);
-    int Frecventa_Procesor = stoi(Frecventa_Procesor_Introdusa);
-    int validare3 = 1;
-    while (validare3 == 1) {
-        if (Frecventa_Procesor > 6 || Frecventa_Procesor < 0) {
-            cout << "Alegere incorecta ! Introduce-ti un raspuns corect." << "\n";
-            getline(cin, Frecventa_Procesor_Introdusa);
-            Frecventa_Procesor = stoi(Frecventa_Procesor_Introdusa);
-            validare3 = 1;
-        } else
-            validare3 = 0;
-    }
-
-    string Nume_PC;
-    cout << " Introduce-ti numele calculatorului " << '\n';
-    getline(cin, Nume_PC);
-    if (validare1 == validare2 == validare3 == 0) {
-        cout << "Numele calculatorului este : " << Nume_PC << '\n';
-        cout << "Numar Gb RAM : " << Nr_RAM << '\n';
-        cout << "Numar Gb VRAM : " << Nr_VRAM << '\n';
-        cout << "Numar de Ghz ai procesorului : " << Frecventa_Procesor << '\n';
-
-    }
-
-
-}
 
 
 
@@ -305,11 +311,6 @@ int main() {
         return 0;
     }
 
-    //cout<<"\n"<<"Doresti sa distrugi acest monitor?  Da/Nu"<<"\n";
-    //string Raspuns;
-    //getline(cin, Raspuns);
-    //int Validare_Raspuns=0;
-    //rez->Distrugere_Monitor(Raspuns,Validare_Raspuns);
 
     cout << "Doriti sa creati un nou calculator ? " << '\n';
     cout << "0-NU" << '\n';
@@ -319,8 +320,9 @@ int main() {
     ras2.erase(remove(ras2.begin(), ras2.end(), ' '), ras2.end());
     int ans2 = stoi(ras2);
     if (ans2 == 1) {
-        Calculator *PC = new Calculator();
-        Creare_Pc(PC);
+        Calculator PC = Calculator();
+        PC.Creare_Pc();
+        cout << PC;
     } else {
         return 0;
     }
