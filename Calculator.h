@@ -10,26 +10,14 @@ private:
 
 public:
     // Constructor
-    Calculator(int Nr_RAM = 0, int Frecventa_Procesor = 0, int Nr_VRAM = 0,std::string  Nume_PC = " ",
-               int Nr_Pixeli_Inaltime = 0, int Nr_Pixeli_Latime = 0, std::string  Rezolutie = " ")
-               : unitate(Nr_RAM, Frecventa_Procesor, Nr_VRAM, std::move(Nume_PC)),
-                 monitor(Nr_Pixeli_Inaltime, Nr_Pixeli_Latime, std::move(Rezolutie)){
-        std::cout << "Creare Calculator\n";
-    }
+    Calculator(int Nr_RAM = 0, int Frecventa_Procesor = 0, int Nr_VRAM = 0, std::string Nume_PC = " ",
+               int Nr_Pixeli_Inaltime = 0, int Nr_Pixeli_Latime = 0, std::string Rezolutie = " ");
 
     // Destructor
-    ~Calculator(){
-        std::cout << "Stergere Calculator\n";
-    }
+    ~Calculator();
 
     // Functii
-    void Create_Calculator (){
-        monitor.Creare_Monitor();
-        unitate.Creare_Unitate();
-    }
+    void Create_Calculator();
 
-    void Afisare_Specificatii(){
-        std::cout << monitor << "\n";
-        std::cout << unitate << "\n";
-    }
+    void Afisare_Specificatii();
 };

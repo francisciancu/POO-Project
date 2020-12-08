@@ -13,7 +13,7 @@ private:
 public:
     // Constructor
     Monitor(int Nr_Pixeli_Inaltime = 0, int Nr_Pixeli_Latime = 0, std::string  Rezolutie = " ")
-    : Nr_Pixeli_Inaltime{Nr_Pixeli_Inaltime}, Nr_Pixeli_Latime{Nr_Pixeli_Latime}, Rezolutie{std::move(Rezolutie)} {
+            : Nr_Pixeli_Inaltime{Nr_Pixeli_Inaltime}, Nr_Pixeli_Latime{Nr_Pixeli_Latime}, Rezolutie{std::move(Rezolutie)} {
         std::cout << "Creare Monitor\n";
     }
 
@@ -23,14 +23,14 @@ public:
     }
 
     // Op Overload
-        // Operator =
+    // Operator =
     Monitor &operator=(const Monitor &obj) {
         Nr_Pixeli_Inaltime = obj.Nr_Pixeli_Inaltime;
         Nr_Pixeli_Latime = obj.Nr_Pixeli_Latime;
         Rezolutie = obj.Rezolutie;
         return *this;
     }
-        // Operator <<
+    // Operator <<
     friend std::ostream &operator<<(std::ostream &os, const Monitor &obj) {
         os << "Rezolutia specificata este : " << obj.Rezolutie << "\n";
         return os;
