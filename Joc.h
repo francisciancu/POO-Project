@@ -18,10 +18,8 @@ class Singleplayer{};
 
 class MMORPG : public Joc, Multiplayer{
 public:
-    MMORPG(const Cerinte&,
-           const std::string&);
-    friend std::ostream& operator<<(std::ostream&,
-                                    const MMORPG&);
+    MMORPG(const Cerinte&,const std::string&);
+    friend std::ostream& operator<<(std::ostream&,const MMORPG&);
     void print(std::ostream &os) const override;
 private:
     std::string game_name;
@@ -30,8 +28,7 @@ private:
 
 class Shooter_Singleplayer : public Joc, Singleplayer{
 public:
-    Shooter_Singleplayer(const Cerinte&,
-                         const std::string&);
+    Shooter_Singleplayer(const Cerinte&,const std::string&);
     void print(std::ostream &os) const override;
 private:
     std::string game_name;
@@ -40,8 +37,7 @@ private:
 
 class Shooter_Multiplayer : public Joc, Multiplayer{
 public:
-    Shooter_Multiplayer(const Cerinte&,
-                        const std::string&);
+    Shooter_Multiplayer(const Cerinte&,const std::string&);
     void print(std::ostream &os) const override;
 private:
     std::string game_name;

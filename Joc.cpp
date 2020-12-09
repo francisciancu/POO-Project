@@ -1,12 +1,10 @@
 #include "Joc.h"
 
-MMORPG::MMORPG(const Cerinte& cerArg,
-               const std::string& n):
+MMORPG::MMORPG(const Cerinte& cerArg,const std::string& n):
     cer(cerArg),
     game_name(n){}
 
-Shooter_Singleplayer::Shooter_Singleplayer(const Cerinte &cerArg,
-                                           const std::string& n):
+Shooter_Singleplayer::Shooter_Singleplayer(const Cerinte &cerArg,const std::string& n):
     cer(cerArg),
     game_name(n){}
 
@@ -14,8 +12,7 @@ void Shooter_Singleplayer::print(std::ostream &os) const {
     os << "derived::Shooter_Singleplayer\n";
 }
 
-Shooter_Multiplayer::Shooter_Multiplayer(const Cerinte &cerArg,
-                                         const std::string& n):
+Shooter_Multiplayer::Shooter_Multiplayer(const Cerinte &cerArg,const std::string& n):
     cer(cerArg),
     game_name(n){}
 
