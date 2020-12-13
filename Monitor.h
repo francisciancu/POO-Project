@@ -16,6 +16,12 @@ public:
             : Nr_Pixeli_Inaltime{Nr_Pixeli_Inaltime}, Nr_Pixeli_Latime{Nr_Pixeli_Latime}, Rezolutie{std::move(Rezolutie)} {
         std::cout << "Creare Monitor\n";
     }
+    // Copy constructor
+    Monitor(const Monitor &x) {
+        Nr_Pixeli_Inaltime = x.Nr_Pixeli_Inaltime ;
+        Nr_Pixeli_Latime = x.Nr_Pixeli_Latime;
+        Rezolutie = x.Rezolutie;}
+
 
     // Destructor
     ~Monitor() {
