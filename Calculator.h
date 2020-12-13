@@ -14,7 +14,7 @@ public:
 
     // Destructor
     ~Calculator();
-
+private:
     // Functii
     void Create_Calculator();
 

@@ -13,10 +13,16 @@ private:
     }
 };
 
-class Multiplayer{};
-class Singleplayer{};
+class Multiplayer{
 
-class MMORPG : public Joc, Multiplayer{
+    bool Multiplayer=true;
+};
+class Singleplayer{
+
+    bool Multiplayer=false;
+};
+
+class MMORPG : public Joc, public Multiplayer{
 public:
     MMORPG(const Cerinte&,const std::string&);
     friend std::ostream& operator<<(std::ostream&,const MMORPG&);
@@ -26,7 +32,7 @@ private:
     Cerinte cer;
 };
 
-class Shooter_Singleplayer : public Joc, Singleplayer{
+class Shooter_Singleplayer : public Joc, public Singleplayer{
 public:
     Shooter_Singleplayer(const Cerinte&,const std::string&);
     void print(std::ostream &os) const override;
@@ -35,7 +41,7 @@ private:
     Cerinte cer;
 };
 
-class Shooter_Multiplayer : public Joc, Multiplayer{
+class Shooter_Multiplayer : public Joc, public Multiplayer{
 public:
     Shooter_Multiplayer(const Cerinte&,const std::string&);
     void print(std::ostream &os) const override;
