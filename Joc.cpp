@@ -12,6 +12,12 @@ void Shooter_Singleplayer::print(std::ostream &os) const {
     os << "derived::Shooter_Singleplayer\n";
 }
 
+std::ostream &operator<<(std::ostream &os, const Shooter_Singleplayer &ss) {
+    os << "Numele jocului: " << ss.game_name << '\n';
+    os << ss.cer;
+    return os;
+}
+
 Shooter_Multiplayer::Shooter_Multiplayer(const Cerinte &cerArg,const std::string& n):
     cer(cerArg),
     game_name(n){}

@@ -35,6 +35,7 @@ private:
 class Shooter_Singleplayer : public Joc, public Singleplayer{
 public:
     Shooter_Singleplayer(const Cerinte&,const std::string&);
+    friend std::ostream& operator<<(std::ostream&,const Shooter_Singleplayer&);
     void print(std::ostream &os) const override;
 private:
     std::string game_name;

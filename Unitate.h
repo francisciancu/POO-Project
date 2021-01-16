@@ -16,6 +16,18 @@ public:
     // Constructor
     Unitate(int Nr_RAM = 0, int Frecventa_Procesor = 0, int Nr_VRAM = 0, std::string Nume_PC = " ");
 
+    int getNrRAM() const{
+        return this->Nr_RAM;
+    }
+
+    int getFrecventaProcesor() const{
+        return this->Frecventa_Procesor;
+    }
+
+    int getNrVRAM() const{
+        return this->Nr_VRAM;
+    }
+
     // Destructor
     ~Unitate();
 
