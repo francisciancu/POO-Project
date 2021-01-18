@@ -38,7 +38,8 @@ void Unitate::Creare_Unitate() {
             
         }
         catch (std::exception &exception1) {
-            std::cout<<exception1.what();
+            std::cout<<"Eroarea a fost cauzata de : un numar prea mare /"<<exception1.what()<<std::endl;
+            std::cout<<"Alegere incorecta ! Introduce-ti un raspuns corect.\n";
             
         }
         
@@ -50,16 +51,24 @@ void Unitate::Creare_Unitate() {
     do {
         std::string Nr_VRAM_Introdus;
         getline(std::cin, Nr_VRAM_Introdus);
-        int Nr_Vram = stoi(Nr_VRAM_Introdus);
+        int Nr_Vram;
 
+        try {
+            Nr_Vram = stoi(Nr_VRAM_Introdus,nullptr,10);
+            if (Nr_Vram < 16 && Nr_Vram > 0)
+            {
+                validare_vram = true;
+                this->Nr_VRAM = Nr_Vram;
 
+            }else throw std::invalid_argument("Alegere incorecta ! Introduce-ti un raspuns corect.\n");
 
-        if (Nr_Vram > 16 || Nr_Vram < 0)
-            std::cout << "Alegere incorecta ! Introduce-ti un raspuns corect.\n";
-        else{
-            validare_vram = true;
-            this->Nr_VRAM = Nr_Vram;
         }
+        catch (std::exception &exception1) {
+            std::cout<<"Eroarea a fost cauzata de : un numar prea mare /"<<exception1.what()<<std::endl;
+            std::cout<<"Alegere incorecta ! Introduce-ti un raspuns corect.\n";
+
+        }
+
     } while(validare_vram == false);
 
 
@@ -68,16 +77,26 @@ void Unitate::Creare_Unitate() {
     std::cout << "Introduceti numarul de GHz ai procesorului ( Numar Maxim 6 ) :\n";
     bool validare_procesor = false;
     do {
+
         std::string Frecventa_Procesor_Introdusa;
         getline(std::cin, Frecventa_Procesor_Introdusa);
-        int Frecventa_procesor = stoi(Frecventa_Procesor_Introdusa);
+        int Frecventa_procesor;
+        try {
+            Frecventa_procesor = stoi(Frecventa_Procesor_Introdusa,nullptr,10);
+            if (Frecventa_procesor < 6 && Frecventa_procesor > 0)
+            {
+                validare_procesor = true;
+                this->Frecventa_Procesor = Frecventa_procesor;
 
-        if (Frecventa_procesor > 6 || Frecventa_procesor < 0)
-            std::cout << "Alegere incorecta ! Introduce-ti un raspuns corect." << "\n";
-        else {
-            validare_procesor = true;
-            this->Frecventa_Procesor = Frecventa_procesor;
+            }else throw std::invalid_argument("Alegere incorecta ! Introduce-ti un raspuns corect.\n");
+
         }
+        catch (std::exception &exception1) {
+            std::cout<<"Eroarea a fost cauzata de : un numar prea mare /"<<exception1.what()<<std::endl;
+            std::cout<<"Alegere incorecta ! Introduce-ti un raspuns corect.\n";
+
+        }
+
     } while(validare_procesor == false);
 
     std::cout << " Introduceti numele calculatorului " << '\n';
