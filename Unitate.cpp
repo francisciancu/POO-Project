@@ -1,4 +1,5 @@
 #include "Unitate.h"
+#include <thread>
 
 Unitate::Unitate(int Nr_RAM, int Frecventa_Procesor, int Nr_VRAM, std::string Nume_PC)
         : Nr_RAM{Nr_RAM}, Frecventa_Procesor{Frecventa_Procesor}, Nr_VRAM{Nr_VRAM}, Nume_PC{std::move(Nume_PC)} {
@@ -25,16 +26,23 @@ void Unitate::Creare_Unitate() {
     do {
         std::string Nr_RAM_Introdus;
         getline(std::cin, Nr_RAM_Introdus);
-        int Nr_Ram = stoi(Nr_RAM_Introdus);
+        int Nr_Ram ;
+        try {
+            Nr_Ram = stoi(Nr_RAM_Introdus,nullptr,10);
+            if (Nr_Ram < 64 && Nr_Ram > 0)
+            {
+                validare_ram = true;
+                this->Nr_RAM = Nr_Ram;
 
-        if (Nr_Ram > 64 || Nr_Ram < 0)
-            std::cout << "Alegere incorecta ! Introduce-ti un raspuns corect.\n";
-        else {
-            validare_ram = true;
-            this->Nr_RAM = Nr_Ram;
+            }else throw std::invalid_argument("Alegere incorecta ! Introduce-ti un raspuns corect.\n");
+            
         }
+        catch (std::exception &exception1) {
+            std::cout<<exception1.what();
+            
+        }
+        
     } while (validare_ram == false);
-
 
 
     std::cout << "Introduceti numarul de Gb de VRAM dorit ( Numar Maxim 16 ) :\n";
@@ -44,6 +52,8 @@ void Unitate::Creare_Unitate() {
         getline(std::cin, Nr_VRAM_Introdus);
         int Nr_Vram = stoi(Nr_VRAM_Introdus);
 
+
+
         if (Nr_Vram > 16 || Nr_Vram < 0)
             std::cout << "Alegere incorecta ! Introduce-ti un raspuns corect.\n";
         else{
@@ -51,6 +61,8 @@ void Unitate::Creare_Unitate() {
             this->Nr_VRAM = Nr_Vram;
         }
     } while(validare_vram == false);
+
+
 
 
     std::cout << "Introduceti numarul de GHz ai procesorului ( Numar Maxim 6 ) :\n";

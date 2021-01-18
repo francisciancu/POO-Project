@@ -6,6 +6,7 @@
 #include <memory>
 
 
+
 class Exception : public std::exception{
 public:
     explicit Exception(const char* message):
@@ -34,32 +35,69 @@ int main() {
     std::cin>>menu;
 menu=1;
     if(menu==1){
-        Calculator *calc = new Calculator();
-        calc->Create_Calculator();
-        //calc->Afisare_Specificatii();
-        int a,b,c,d,e;
-        std::cin>>a>>b>>c>>d>>e;
-        //delete calc;
+        int menu2;
+        std::cout<<" Ce doriti sa faceti ?"<<std::endl;
+        std::cout<<"1 - Rulati programul in mod normal."<<std::endl;
+        std::cout<<"2 - Construiti un monitor factory rapid. "<<std::endl<<std::endl;
+        std::cin>>menu2;
 
-        Cerinte cerinte_Joc(a, b, c, d, e);
-        MMORPG m1(cerinte_Joc, "Wow");
-        Shooter_Singleplayer s1(Cerinte(1,2,3,4,5), "CS");
+        if (menu2==1)
+        {
+            Calculator *calc = new Calculator();
+            calc->Create_Calculator();
+
+            //calc->Afisare_Specificatii();
+            int a,b,c,d,e;
+            std::cin>>a>>b>>c>>d>>e;
+            //delete calc;
+
+            Cerinte cerinte_Joc(a, b, c, d, e);
+            MMORPG m1(cerinte_Joc, "Wow");
+            Shooter_Singleplayer s1(Cerinte(1,2,3,4,5), "CS");
 
 
-        std::cout << m1<<std::endl;
-        std::cout << s1;
+            std::cout << m1<<std::endl;
+            std::cout << s1;
 
-        std::cout << calc -> getUnitate();
-        Cerinte cerinteJoc(1, 1, 1, 1, 1);
-        Calculator *calcc = new Calculator(1, 1, 1, "string", 1, 1, "string");
-        compare_Game_PC(cerinteJoc, calcc);
+            std::cout << calc -> getUnitate();
+            Cerinte cerinteJoc(1, 1, 1, 1, 1);
+            Calculator *calcc = new Calculator(1, 1, 1, "string", 1, 1, "string");
+            compare_Game_PC(cerinteJoc, calcc);
+
+        }else if(menu2!=1){
+            std::cout<<"Ce monitor doriti sa construiti rapid?"<<std::endl;
+            std::cout<<"1 - Monitor Asus"<<std::endl;
+            std::cout<<"2 - Monitor HP"<<std::endl;
+            std::cout<<"3 - Monitor Acer"<<std::endl;
+            std::cout<<"4 - Monitor LG"<<std::endl;
+            std::cout<<"5 - Monitor Philips"<<std::endl;
+            int choise;
+            std::cin>>choise;
+            switch (choise)
+                { case 1:std::cout<<Monitor_factory::Asus();
+                        break;
+                case 2: std::cout<<Monitor_factory::HP();
+                        break;
+                    case 3: std::cout<<Monitor_factory::Acer();
+                        break;
+                    case 4: std::cout<<Monitor_factory::LG();
+                        break;
+                    case 5: std::cout<<Monitor_factory::Philips();
+                        break;
+                    default:
+                        break;
+
+            }
+
+        }
 
     }
-    else {
+    else if(menu!=1){
         std::cout << " Program inchis! " << std::endl;
         return 0;
 
     }
+
 
     return 0;
 }
