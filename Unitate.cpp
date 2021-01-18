@@ -21,7 +21,7 @@ std::ostream &operator<<(std::ostream &os, const Unitate &obj){
 
 void Unitate::Creare_Unitate() {
 
-    std::cout << "Introduceti numarul de GB de RAM dorit ( Numar Maxim 64 ) :\n";
+    std::cout << "Introduce-ti numarul de GB de RAM dorit ( Numar Maxim 64 ) :\n";
     bool validare_ram = false;
     do {
         std::string Nr_RAM_Introdus;
@@ -46,7 +46,7 @@ void Unitate::Creare_Unitate() {
     } while (validare_ram == false);
 
 
-    std::cout << "Introduceti numarul de Gb de VRAM dorit ( Numar Maxim 16 ) :\n";
+    std::cout << "Introduce-ti numarul de Gb de VRAM dorit ( Numar Maxim 16 ) :\n";
     bool validare_vram = false;
     do {
         std::string Nr_VRAM_Introdus;
@@ -74,7 +74,7 @@ void Unitate::Creare_Unitate() {
 
 
 
-    std::cout << "Introduceti numarul de GHz ai procesorului ( Numar Maxim 6 ) :\n";
+    std::cout << "Introduce-ti numarul de GHz ai procesorului ( Numar Maxim 6 ) :\n";
     bool validare_procesor = false;
     do {
 
@@ -99,7 +99,7 @@ void Unitate::Creare_Unitate() {
 
     } while(validare_procesor == false);
 
-    std::cout << " Introduceti numele calculatorului " << '\n';
+    std::cout << " Introduce-ti numele calculatorului " << '\n';
     getline(std::cin, this->Nume_PC);
 }
 

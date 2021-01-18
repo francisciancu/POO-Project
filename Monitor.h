@@ -63,7 +63,7 @@ public:
         getline(std::cin, rez_mon);
         rez_mon.erase(remove(rez_mon.begin(), rez_mon.end(), ' '), rez_mon.end());
         while (rez_mon.size() > 1 || (rez_mon[0] < '1' || rez_mon[0] > '5')) {
-            std::cout << "Alegere incorecta ! Introduce-ti un raspuns corect." << "\n";
+            std::cout << "Alegere incorecta ! Introduce-ti un raspuns valabil." << "\n";
             getline(std::cin, rez_mon);
             rez_mon.erase(remove(rez_mon.begin(), rez_mon.end(), ' '), rez_mon.end());
         }

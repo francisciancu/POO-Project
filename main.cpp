@@ -39,6 +39,8 @@ menu=1;
         std::cout<<" Ce doriti sa faceti ?"<<std::endl;
         std::cout<<"1 - Rulati programul in mod normal."<<std::endl;
         std::cout<<"2 - Construiti un monitor factory rapid. "<<std::endl<<std::endl;
+        std::cout<<" Introduce-ti raspunsul : "<<std::endl;
+
         std::cin>>menu2;
 
         if (menu2==1)
@@ -71,6 +73,7 @@ menu=1;
             std::cout<<"3 - Monitor Acer"<<std::endl;
             std::cout<<"4 - Monitor LG"<<std::endl;
             std::cout<<"5 - Monitor Philips"<<std::endl;
+            std::cout<<" Introduce-ti raspunsul : "<<std::endl;
             int choise;
             std::cin>>choise;
             switch (choise)
@@ -106,7 +109,7 @@ void compare_Game_PC(Cerinte& cer, Calculator* cal){
     std::cout << "Cerintele jocului:\n" << cer;
     try{
         if(cer.getFrProc() < cal -> getUnitate() -> getFrecventaProcesor())
-            throw(Exception("Procesorul nu este suficient de PUTERRRNIC"));
+            throw(Exception("Procesorul nu este suficient de puternic"));
         if(cer.getRAM() < cal -> getUnitate() -> getNrRAM())
             throw(Exception("Memorie insuficienta"));
         if(cer.getVRAM() < cal -> getUnitate() -> getNrVRAM())
