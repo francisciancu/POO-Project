@@ -90,6 +90,15 @@ public:
         }
     }
 
+    class Monitor_factory {
+    public:
+        static Monitor HP() { return Monitor(1920, 1080 ,"1080p"); }
+        static Monitor Acer() { return Monitor(1440, 2560, "1440p"); }
+        static Monitor LG() { return Monitor(720, 1280, "720p"); }
+        static Monitor Philips() { return Monitor(2160, 3840, "2160p/4K"); }
+        static Monitor Asus() { return Monitor(4320, 7680, "4320p/8K"); }
+    };
+
 
 
 };
