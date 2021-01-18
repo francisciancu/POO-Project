@@ -24,8 +24,7 @@ jobs:
         cppcheck --enable=all .
     - name: valgrind
       run:
-        cat valgrind.txt | valgrind --leak-check=full --show-leak-kinds=all
-                 --track-origins=yes --error-exitcode=1 
+        cat valgrind.txt | valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --error-exitcode=1 ./main
     - name: coverage
       run: |
         gcov *.cpp
