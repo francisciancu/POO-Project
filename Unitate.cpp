@@ -46,7 +46,7 @@ void Unitate::Creare_Unitate() {
     } while (validare_ram == false);
 
 
-    std::cout << "Introduce-ti numarul de Gb de VRAM dorit ( Numar Maxim 16 ) :\n";
+    std::cout << "Introduceti numarul de Gb de VRAM dorit ( Numar Maxim 16 ) :\n";
     bool validare_vram = false;
     do {
         std::string Nr_VRAM_Introdus;
