@@ -30,8 +30,8 @@ int main() {
     int menu;
     std::cout<<" Ce doriti sa faceti ?"<<std::endl;
     std::cout<<"1 - Rulati programul."<<std::endl;
-    std::cout<<"2 - Inchide-ti programul. "<<std::endl<<std::endl;
-    std::cout<<" Introduce-ti raspunsul : "<<std::endl;
+    std::cout<<"2 - Inchideti programul. "<<std::endl<<std::endl;
+    std::cout<<" Introduceti raspunsul : "<<std::endl;
     std::cin>>menu;
 menu=1;
     if(menu==1){
@@ -39,7 +39,7 @@ menu=1;
         std::cout<<" Ce doriti sa faceti ?"<<std::endl;
         std::cout<<"1 - Rulati programul in mod normal."<<std::endl;
         std::cout<<"2 - Construiti un monitor factory rapid. "<<std::endl<<std::endl;
-        std::cout<<" Introduce-ti raspunsul : "<<std::endl;
+        std::cout<<" Introduceti raspunsul : "<<std::endl;
 
         std::cin>>menu2;
 
@@ -73,7 +73,7 @@ menu=1;
             std::cout<<"3 - Monitor Acer"<<std::endl;
             std::cout<<"4 - Monitor LG"<<std::endl;
             std::cout<<"5 - Monitor Philips"<<std::endl;
-            std::cout<<" Introduce-ti raspunsul : "<<std::endl;
+            std::cout<<" Introduceti raspunsul : "<<std::endl;
             int choise;
             std::cin>>choise;
             switch (choise)

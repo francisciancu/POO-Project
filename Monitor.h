@@ -57,13 +57,13 @@ public:
         std::cout << " 2560 x 1440 - 3" << std::endl;
         std::cout << " 3840 x 2160 - 4" << std::endl;
         std::cout << " 7680 x 4320 - 5" << std::endl;
-        std::cout << " Introduce-ti numarul corespunzator rezolutiei dumneavoastra :\n";
+        std::cout << " Introduceti numarul corespunzator rezolutiei dumneavoastra :\n";
 
         std::string rez_mon;
         getline(std::cin, rez_mon);
         rez_mon.erase(remove(rez_mon.begin(), rez_mon.end(), ' '), rez_mon.end());
         while (rez_mon.size() > 1 || (rez_mon[0] < '1' || rez_mon[0] > '5')) {
-            std::cout << "Alegere incorecta ! Introduce-ti un raspuns valabil." << "\n";
+            std::cout << "Alegere incorecta ! Introduceti un raspuns valabil." << "\n";
             getline(std::cin, rez_mon);
             rez_mon.erase(remove(rez_mon.begin(), rez_mon.end(), ' '), rez_mon.end());
         }

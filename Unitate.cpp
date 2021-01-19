@@ -21,7 +21,7 @@ std::ostream &operator<<(std::ostream &os, const Unitate &obj){
 
 void Unitate::Creare_Unitate() {
 
-    std::cout << "Introduce-ti numarul de GB de RAM dorit ( Numar Maxim 64 ) :\n";
+    std::cout << "Introduceti numarul de GB de RAM dorit ( Numar Maxim 64 ) :\n";
     bool validare_ram = false;
     do {
         std::string Nr_RAM_Introdus;
@@ -34,12 +34,12 @@ void Unitate::Creare_Unitate() {
                 validare_ram = true;
                 this->Nr_RAM = Nr_Ram;
 
-            }else throw std::invalid_argument("Alegere incorecta ! Introduce-ti un raspuns corect.\n");
+            }else throw std::invalid_argument("Alegere incorecta ! Introduceti un raspuns corect.\n");
             
         }
         catch (std::exception &exception1) {
             std::cout<<"Eroarea a fost cauzata de : un numar prea mare /"<<exception1.what()<<std::endl;
-            std::cout<<"Alegere incorecta ! Introduce-ti un raspuns corect.\n";
+            std::cout<<"Alegere incorecta ! Introduceti un raspuns corect.\n";
             
         }
         
@@ -60,12 +60,12 @@ void Unitate::Creare_Unitate() {
                 validare_vram = true;
                 this->Nr_VRAM = Nr_Vram;
 
-            }else throw std::invalid_argument("Alegere incorecta ! Introduce-ti un raspuns corect.\n");
+            }else throw std::invalid_argument("Alegere incorecta ! Introduceti un raspuns corect.\n");
 
         }
         catch (std::exception &exception1) {
             std::cout<<"Eroarea a fost cauzata de : un numar prea mare /"<<exception1.what()<<std::endl;
-            std::cout<<"Alegere incorecta ! Introduce-ti un raspuns corect.\n";
+            std::cout<<"Alegere incorecta ! Introduceti un raspuns corect.\n";
 
         }
 
@@ -74,7 +74,7 @@ void Unitate::Creare_Unitate() {
 
 
 
-    std::cout << "Introduce-ti numarul de GHz ai procesorului ( Numar Maxim 6 ) :\n";
+    std::cout << "Introduceti numarul de GHz ai procesorului ( Numar Maxim 6 ) :\n";
     bool validare_procesor = false;
     do {
 
@@ -88,18 +88,18 @@ void Unitate::Creare_Unitate() {
                 validare_procesor = true;
                 this->Frecventa_Procesor = Frecventa_procesor;
 
-            }else throw std::invalid_argument("Alegere incorecta ! Introduce-ti un raspuns corect.\n");
+            }else throw std::invalid_argument("Alegere incorecta ! Introduceti un raspuns corect.\n");
 
         }
         catch (std::exception &exception1) {
             std::cout<<"Eroarea a fost cauzata de : un numar prea mare /"<<exception1.what()<<std::endl;
-            std::cout<<"Alegere incorecta ! Introduce-ti un raspuns corect.\n";
+            std::cout<<"Alegere incorecta ! Introduceti un raspuns corect.\n";
 
         }
 
     } while(validare_procesor == false);
 
-    std::cout << " Introduce-ti numele calculatorului " << '\n';
+    std::cout << " Introduceti numele calculatorului " << '\n';
     getline(std::cin, this->Nume_PC);
 }
 
