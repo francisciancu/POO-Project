@@ -30,7 +30,7 @@ int main() {
     int menu;
     std::cout<<" Ce doriti sa faceti ?"<<std::endl;
     std::cout<<"1 - Rulati programul."<<std::endl;
-    std::cout<<"2 - Inchideti programul. "<<std::endl<<std::endl;
+    std::cout<<"2 - Exit. "<<std::endl<<std::endl;
     std::cout<<" Introduceti raspunsul : "<<std::endl;
     std::cin>>menu;
 menu=1;
@@ -96,7 +96,7 @@ menu=1;
 
     }
     else if(menu!=1){
-        std::cout << " Program inchis! " << std::endl;
+        std::cout << " Closed! GL & HF " << std::endl;
         return 0;
 
     }
@@ -111,11 +111,11 @@ void compare_Game_PC(Cerinte& cer, Calculator* cal){
         if(cer.getFrProc() < cal -> getUnitate() -> getFrecventaProcesor())
             throw(Exception("Procesorul nu este suficient de puternic"));
         if(cer.getRAM() < cal -> getUnitate() -> getNrRAM())
-            throw(Exception("Memorie insuficienta"));
+            throw(Exception("Memorie RAM insuficienta"));
         if(cer.getVRAM() < cal -> getUnitate() -> getNrVRAM())
-            throw(Exception("Memorie virtuala insuficienta"));
+            throw(Exception("Memorie VRAM insuficienta"));
 
-        std::cout << "Puteti rula jocul in siguranta\n";
+        std::cout << "Puteti rula jocul .\n";
     }
     catch (Exception e){
         std::cout << e.what() << '\n';
